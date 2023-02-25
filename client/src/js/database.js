@@ -13,20 +13,25 @@ const initdb = async () =>
   });
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented, at least, not properly');
+export const putDb = async (content) => {
+  
+
+
+};
 
 // GET all content from the DB
 export const getDb = async () => {
     // Create connection
-    const contactDb = await openDB('contact', 1);
+    const txtEditorDb = await openDB('jate', 1);
     // Create (configured) transaction
-    const transaxn = contactDb.transaction('contact', 'readonly');
+    const transaxn = txtEditorDb.transaction('jate', 'readonly');
     // Open object store
-    const store = transaxn.objectStore('contact');
+    const store = transaxn.objectStore('jate');
     // Get everything in the object store & set it to a variable
     const request = store.getAll();
-    // Set resulting data to a variable & return it
+    // Set resulting data to a variable, log & return it
     const result = await request;
+    console.log('result.value', result);
     return result;
 };
 
