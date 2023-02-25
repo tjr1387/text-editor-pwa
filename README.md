@@ -25,7 +25,7 @@ If in dev mode, a simple 'npm (run) start' will execute the app. Otherwise you c
 
 Screenshot(s):  
 ![Manifest](./assets/screenshots/manifest.png?raw=true "Manifest in devtools")
-![Service worker](./public/assets/images/service-worker.png?raw=true "Custom service worker in devtools")
+![Service worker](./assets/screenshots/service-worker.png?raw=true "Custom service worker in devtools")
 
 Link to Heroku app: https://desolate-everglades-93424.herokuapp.com/  
 
