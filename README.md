@@ -23,7 +23,9 @@ Client _dev_ packages (many): '@babel + /core, /plugin-transofrm-runtime, /prese
 
 If in dev mode, a simple 'npm (run) start' will execute the app. Otherwise you can simply go to the livesite URL. Once the app begins, you will see a simple text editor that you can make additions/deletions to. Local storage will take a snapshot of the current data upon every change, and IndexedDB will then save upon either reloading or simply just navigating to another tab/app (going out of focus). It functions similarly to notepad, however there is an element of coding acknowledgement, as some coding keywords are rendered if different colors. At the top there is an option to install this onto your local machine, and when confirmed, you'll see a shortcut appear on your desktop called 'My Text Editor'. It works offline exactly the same way as it works at its online URL. 
 
-Screenshot(s):
+Screenshot(s):  
+![Manifest](./assets/screenshots/manifest.png?raw=true "Manifest in devtools")
+![Service worker](./public/assets/images/service-worker.png?raw=true "Custom service worker in devtools")
 
 Link to Heroku app: https://desolate-everglades-93424.herokuapp.com/  
 
