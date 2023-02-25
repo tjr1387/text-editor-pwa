@@ -12,11 +12,19 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => {
-  
-
-
+// PUT (update) the DB content
+export const putDb = async (id, content) => {                   // may not need id here
+  // Create connection
+  const txtEditorDb = await openDB('jate', 1);
+  // Create (configured) transaction
+  const transaxn = txtEditorDb.transaction('jate', 'readwrite');
+  // Open object store
+  const store = transaxn.objectStore('jate');
+  // Update the store with new content
+  const request = store.put({ id: id, content: content });      // do we need id here?
+  // Set result to a variable and log it
+  const result = await request;
+  console.log('Updated the database', result);
 };
 
 // GET all content from the DB
@@ -29,7 +37,7 @@ export const getDb = async () => {
     const store = transaxn.objectStore('jate');
     // Get everything in the object store & set it to a variable
     const request = store.getAll();
-    // Set resulting data to a variable, log & return it
+    // Set result to a variable, log & return it
     const result = await request;
     console.log('result.value', result);
     return result;
