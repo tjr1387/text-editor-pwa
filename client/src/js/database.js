@@ -12,8 +12,8 @@ const initdb = async () =>
     },
   });
 
-// PUT (update) the DB content
-export const putDb = async (id, content) => {                   // may not need id here
+// PUT (update) the DB content -- doesnt work yet
+export const putDb = async (content) => {
   // Create connection
   const txtEditorDb = await openDB('jate', 1);
   // Create (configured) transaction
@@ -21,7 +21,7 @@ export const putDb = async (id, content) => {                   // may not need 
   // Open object store
   const store = transaxn.objectStore('jate');
   // Update the store with new content
-  const request = store.put({ id: id, content: content });      // do we need id here?
+  const request = store.put({ value: content });  //something wrong here?
   // Set result to a variable and log it
   const result = await request;
   console.log('Updated the database', result);
